@@ -173,9 +173,9 @@ Open the project in an IDE and run the `Main` class.
 Example Console Flow:
 
 ```
-=======================================
-        DSA SORTING Algorithms
-=======================================
+=========================================
+         DSA SORTING Algorithms
+=========================================
 
 How many numbers do you want to sort? : 5
 
