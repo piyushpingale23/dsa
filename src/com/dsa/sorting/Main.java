@@ -2,6 +2,11 @@ package com.dsa.sorting;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import static com.dsa.sorting.BubbleSort.bubbleSort;
+import static com.dsa.sorting.InsertionSort.insertionSort;
+import static com.dsa.sorting.MergeSort.mergeSort;
+import static com.dsa.sorting.QuickSort.quickSort;
+import static com.dsa.sorting.SelectionSort.selectionSort;
 
 public class Main {
 
@@ -28,8 +33,8 @@ public class Main {
         System.out.println("Choose a Sorting Algorithm");
         System.out.println("---------------------------------");
         System.out.println("1. Insertion Sort");
-        System.out.println("2. Selection Sort");
-        System.out.println("3. Bubble Sort");
+        System.out.println("2. Bubble Sort");
+        System.out.println("3. Selection Sort");
         System.out.println("4. Quick Sort");
         System.out.println("5. Merge Sort");
         System.out.println("---------------------------------");
@@ -41,10 +46,20 @@ public class Main {
 
         switch (choice) {
             case 1:
-                InsertionSort is = new InsertionSort();
-                is.insertionSort(arr);
+                insertionSort(arr);
                 break;
-
+            case 2:
+                bubbleSort(arr);
+                break;
+            case 3:
+                selectionSort(arr);
+                break;
+            case 4:
+                quickSort(arr);
+                break;
+            case 5:
+                mergeSort(arr);
+                break;
             default:
                 System.out.println("Invalid choice!");
                 return;
