@@ -1,0 +1,38 @@
+package com.dsa.slidingwindow;
+
+public class FixedSizeSlidingWindow {
+
+    public static int maxSumSubArray(int[] arr, int k) {
+
+        int windowSum = 0;
+        int maxSum;
+
+        // First window
+        for(int i = 0; i < k; i++) {
+            windowSum += arr[i];
+        }
+
+        maxSum = windowSum;
+
+        // Slide the window
+        for(int i = k; i < arr.length; i++) {
+
+            windowSum += arr[i];       // element entering window
+            windowSum -= arr[i - k];   // element leaving window
+
+            maxSum = Math.max(maxSum, windowSum);
+        }
+
+        return maxSum;
+    }
+
+    public static void main(String[] args) {
+
+        int[] arr = {2, 1, 5, 1, 3, 2};
+        int k = 3;
+
+        int result = maxSumSubArray(arr, k);
+
+        System.out.println("Maximum Window Sum = " + result);
+    }
+}
